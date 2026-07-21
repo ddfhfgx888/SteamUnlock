@@ -24,14 +24,14 @@ jobs:
       - name: Verify output
         shell: powershell
         run: |
-          if (-not (Test-Path .\dist\SteamGameActivator.exe) -or
-              (Get-Item .\dist\SteamGameActivator.exe).Length -eq 0) {
+          if (-not (Test-Path .\dist\SteamHelper.exe) -or
+              (Get-Item .\dist\SteamHelper.exe).Length -eq 0) {
             throw 'Build output is missing or empty.'
           }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SteamGameActivator-windows
-          path: dist/SteamGameActivator.exe
+          name: SteamHelper-windows
+          path: dist/SteamHelper.exe
           if-no-files-found: error

@@ -12,7 +12,7 @@
 
 ### Changed
 
-- 项目名称更新为 `steamhelper`
+- 项目名称更新为 `SteamHelper`
 
 ## [1.0.0] - 2026-07-21
 
