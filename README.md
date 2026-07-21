@@ -1,4 +1,4 @@
-# SteamHelper
+# SteamUnlock
 
 一个面向 Windows 的单文件 Steam 配置部署 CLI。程序会自动检测 Steam 目录、安装或检查 OpenSteamTools 组件，并根据 AppID 下载和部署游戏配置。
 
@@ -25,10 +25,10 @@
 
 ## 快速开始
 
-从 [Releases](../../releases) 下载 `SteamHelper.exe`，然后运行：
+从 [Releases](../../releases) 下载 `SteamUnlock.exe`，然后运行：
 
 ```powershell
-.\SteamHelper.exe
+.\SteamUnlock.exe
 ```
 
 首次使用选择 `1` 安装/修复组件，再选择 `2` 输入 Steam AppID。部署后如未生效，请完全退出并重启 Steam。
@@ -36,8 +36,8 @@
 ### 命令行模式
 
 ```powershell
-.\SteamHelper.exe install
-.\SteamHelper.exe activate APPID
+.\SteamUnlock.exe install
+.\SteamUnlock.exe activate APPID
 ```
 
 ## 从源码构建
@@ -56,7 +56,7 @@ xinput1_4.dll
 powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-输出文件位于 `dist/SteamHelper.exe`。三个 DLL 会作为资源嵌入最终 EXE。
+输出文件位于 `dist/SteamUnlock.exe`。三个 DLL 会作为资源嵌入最终 EXE。
 
 ## 项目结构
 

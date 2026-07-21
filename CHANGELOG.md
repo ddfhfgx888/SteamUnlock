@@ -12,7 +12,7 @@
 
 ### Changed
 
-- 项目名称更新为 `SteamHelper`
+- 项目名称更新为 `SteamUnlock`
 
 ## [1.0.0] - 2026-07-21
 

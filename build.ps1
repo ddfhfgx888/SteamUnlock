@@ -1,9 +1,9 @@
 $ErrorActionPreference = 'Stop'
 $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 $assets = Join-Path $PSScriptRoot 'vendor\OpenSteamTools'
-$source = Join-Path $PSScriptRoot 'src\SteamHelper.cs'
+$source = Join-Path $PSScriptRoot 'src\SteamUnlock.cs'
 $dist = Join-Path $PSScriptRoot 'dist'
-$output = Join-Path $dist 'SteamHelper.exe'
+$output = Join-Path $dist 'SteamUnlock.exe'
 
 $requiredFiles = @('OpenSteamTool.dll', 'dwmapi.dll', 'xinput1_4.dll')
 if (-not (Test-Path $csc)) { throw "C# compiler not found: $csc" }

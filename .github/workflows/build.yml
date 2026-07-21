@@ -24,14 +24,14 @@ jobs:
       - name: Verify output
         shell: powershell
         run: |
-          if (-not (Test-Path .\dist\SteamHelper.exe) -or
-              (Get-Item .\dist\SteamHelper.exe).Length -eq 0) {
+          if (-not (Test-Path .\dist\SteamUnlock.exe) -or
+              (Get-Item .\dist\SteamUnlock.exe).Length -eq 0) {
             throw 'Build output is missing or empty.'
           }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SteamHelper-windows
-          path: dist/SteamHelper.exe
+          name: SteamUnlock-windows
+          path: dist/SteamUnlock.exe
           if-no-files-found: error

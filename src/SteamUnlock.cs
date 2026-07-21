@@ -137,7 +137,7 @@ internal static class Program
             }
             WriteSuccess("游戏 " + appId + " 已找到" + (String.IsNullOrEmpty(response.data.name) ? "。" : ": " + response.data.name));
 
-            string tempRoot = Path.Combine(Path.GetTempPath(), "SteamHelper", Guid.NewGuid().ToString("N"));
+            string tempRoot = Path.Combine(Path.GetTempPath(), "SteamUnlock", Guid.NewGuid().ToString("N"));
             string zipPath = Path.Combine(tempRoot, appId + ".zip");
             Directory.CreateDirectory(tempRoot);
             try
@@ -167,7 +167,7 @@ internal static class Program
     {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ApiBase + Uri.EscapeDataString(appId));
         request.Method = "GET";
-        request.UserAgent = "SteamHelper/1.0";
+        request.UserAgent = "SteamUnlock/1.0";
         request.Timeout = 20000;
         using (WebResponse response = request.GetResponse())
         using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
@@ -178,7 +178,7 @@ internal static class Program
     {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
         request.Method = "GET";
-        request.UserAgent = "SteamHelper/1.0";
+        request.UserAgent = "SteamUnlock/1.0";
         request.Timeout = 60000;
         request.ReadWriteTimeout = 60000;
         using (WebResponse response = request.GetResponse())
