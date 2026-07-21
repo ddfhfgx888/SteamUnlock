@@ -1,0 +1,19 @@
+# Build output
+dist/
+*.pdb
+*.log
+
+# User and IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Temporary files
+*.tmp
+*.zip
+Thumbs.db
+.DS_Store
+
+# Local test fixtures
+test-steam/

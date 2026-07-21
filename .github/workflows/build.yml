@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build single-file executable
+        shell: powershell
+        run: .\build.ps1
+
+      - name: Verify output
+        shell: powershell
+        run: |
+          if (-not (Test-Path .\dist\SteamGameActivator.exe) -or
+              (Get-Item .\dist\SteamGameActivator.exe).Length -eq 0) {
+            throw 'Build output is missing or empty.'
+          }
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SteamGameActivator-windows
+          path: dist/SteamGameActivator.exe
+          if-no-files-found: error

@@ -1,0 +1,41 @@
+name: Bug report
+description: 报告可复现的问题
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请先移除日志中的账户信息、令牌和个人路径。
+  - type: input
+    id: version
+    attributes:
+      label: 程序版本
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows 版本
+      options: [Windows 11, Windows 10, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: 列出能稳定复现问题的步骤
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为及日志
+    validations:
+      required: true
